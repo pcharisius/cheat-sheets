@@ -72,3 +72,26 @@ SELECT column1, column2
 FROM table2
 ```
 Duplicates are removed by default. Use `UNION ALL` to keep duplicates.
+
+# Analyse Queries
+
+## `EXPLAIN` Theoretical Analyse of Query
+
+```sql
+EXPLAIN 
+delete from table
+where id='x';
+
+```
+
+## `EXPLAIN ANALYZE` Practical Analyse of Query
+    
+```sql
+BEGIN;
+EXPLAIN ANALYSE 
+delete from table
+where id='x';
+ROLLBACK;
+
+```
+Query is executed and would alter data. Use `ROLLBACK` to undo changes.
