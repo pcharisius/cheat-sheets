@@ -73,6 +73,19 @@ FROM table2
 ```
 Duplicates are removed by default. Use `UNION ALL` to keep duplicates.
 
+## relative date operations
+
+```sql
+SELECT
+    'yesterday'::timestamp,
+    'tomorrow'::timestamp;
+```
+
+```sql
+SELECT now() - interval '1 day' AS yesterday;
+```
+
+
 # Analyse Queries
 
 ## `EXPLAIN` Theoretical Analyse of Query
